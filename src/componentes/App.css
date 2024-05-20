@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+}
+
+#tela {
+  /* margin-top: 150px; */
+  border: 1.5px solid;
+  border-radius: 10px;
+  border-color: #CBD5E0;
+}
+
+#tela:active {
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: #3182ce;
+}
+
+#limpar {
+  margin-left: 0;
+}
+
+#header {
+  color: rgb(41, 51, 122);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 350;
+}
+
+#header img {
+  position: absolute;
+  left: 90px;
+  top: 25px;
+}
+
+#limpar {
+  position: absolute;
+  left: 0px;
+  border: 1.5px solid;
+  border-radius: 10px;
+  border-color: #CBD5E0;
+  padding: 7px;
+  color: rgb(41, 51, 122);
+  font-weight: 500px;
+}
+
+#limpar:hover {
+
+  border: 2px solid;
+  border-color: #3182ce;
+  color: white;
+  transition: 0.5s;
+  background-color: #3182ce;
+}
+
+#gravar {
+  position: absolute;
+  right: 10px;
+  border: 1.5px solid;
+  border-radius: 10px;
+  border-color: #CBD5E0;
+  padding: 7px;
+  color: rgb(41, 51, 122);
+  font-weight: 500px;
+}
+
+#gravar:hover {
+  border: 2px solid;
+  border-color: #3182ce;
+  color: white;
+  transition: 0.5s;
+  background-color: #3182ce;
+}
