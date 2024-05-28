@@ -7,7 +7,8 @@ import {
   FormLabel,
   HStack,
   RadioGroup,
-  Radio
+  Radio,
+  Textarea
 } from "@chakra-ui/react";
 
 import Desenho2 from "./componentes/Desenho2";
@@ -36,7 +37,7 @@ function App() {
         align="center"
         justify="center"
         bg="blackAlpha.200"
-        h="calc(100vh)"
+        h="calc(150vh)"
       >
         <Center
           w="100%"
@@ -89,32 +90,40 @@ function App() {
             <HStack spacing="4">
               <Box w="100%">
                 <FormLabel htmlFor="nome" >Cliente</FormLabel>
-                <Input id="nome" placeholder='Nome do cliente'/>
+                <Input id="nome" placeholder='Nome do cliente' />
               </Box>
               <Box w="100%">
-                <FormLabel htmlFor="email">E-mail</FormLabel>
-                <Input id="email" type="email" placeholder='E-mail do Cliente' />
+                <FormLabel htmlFor="cpf">CPF/CNPJ</FormLabel>
+                <Input id="cpf" type="cpf" placeholder='CPF/CNPJ do Cliente' />
               </Box>
-              <Box w="100%">
+              {/* <Box w="100%">
                 <FormLabel htmlFor="cel">Celular</FormLabel>
                 <Input id="cel" type="number" />
-              </Box>
+              </Box> */}
             </HStack>
             <HStack spacing="4">
             </HStack>
             <HStack spacing="4">
-              <Box w="100%">
-                <FormLabel htmlFor="Tefone">Telefone</FormLabel>
-                <Input id="Tefone" type="number" />
-              </Box>
 
-              <Box w="100%">
+              <Box w="200%">
                 <FormLabel htmlFor="endereco">Endereço</FormLabel>
                 <Input id="endereco" />
+              </Box>
+              <Box w="50%">
+                <FormLabel htmlFor="Tefone">Número</FormLabel>
+                <Input id="numero" type="number" />
+              </Box>
+              <Box w="100%">
+                <FormLabel htmlFor="bairro">Bairro</FormLabel>
+                <Input id="bairro" />
               </Box>
               <Box w="100%">
                 <FormLabel htmlFor="cidade">Cidade</FormLabel>
                 <Input id="cidade" />
+              </Box>
+              <Box w="50%">
+                <FormLabel htmlFor="estado">Estado</FormLabel>
+                <Input id="estado" />
               </Box>
             </HStack>
             <HStack spacing="4">
@@ -165,12 +174,28 @@ function App() {
 
             <HStack spacing="4">
               <FormLabel>Observações</FormLabel>
-              <Box width="50%">
+              <Box width="100%">
                 <Input placeholder='Observações' size='md' />
               </Box>
+            </HStack>
+            <HStack spacing="4">
               <FormLabel>Detalhe feito pelo Cliente</FormLabel>
-              <Box width="50%">
+              <Box width="100%">
                 <Input placeholder='Detalhes do Cliente' size='md' />
+              </Box>
+            </HStack>
+
+            <HStack spacing="4">
+              <Box width="100%">
+                <FormLabel>Relatório Técnico</FormLabel>
+                <Textarea placeholder='' />
+              </Box>
+            </HStack>
+
+            <HStack spacing="4">
+              <Box width="100%">
+                <FormLabel>Considerações Gerais / Material Utilizado</FormLabel>
+                <Textarea placeholder='' />
               </Box>
             </HStack>
 

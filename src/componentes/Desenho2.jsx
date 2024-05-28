@@ -67,9 +67,9 @@ const Desenho2 = () => {
 
     return (
         <div className="App">
+            <FormLabel >Assinatura do Cliente</FormLabel>
             <canvas id="tela" width="600px" height="100px">
             </canvas>
-            <FormLabel >Assinatura do Cliente</FormLabel>
             <div id="limpar">
                 <button onClick={() => setLimpar((limpar) => limpar + 1)}    >Limpar</button>
                 {/* <button onClick={'handleClick'}    >Limpar</button> */}
