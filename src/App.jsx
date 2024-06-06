@@ -14,8 +14,40 @@ import {
 import Desenho2 from "./componentes/Desenho2";
 
 import Logo from "./assets/duallytecLogo.png"
+import { useRef } from "react";
+import api from '../src/services/api'
+
 
 function App() {
+
+  const inputChamado = useRef()
+  const inputCliente = useRef()
+  const inputIniAtendimento = useRef()
+  const inputAberturaChamado = useRef()
+  const inputFimAtendimento = useRef()
+  const inputKmInicio = useRef()
+  const inputKmFim = useRef()
+  const radioContratoSim = useRef()
+  const radioGarantiaSim = useRef()
+  const radioTipoCorretiva = useRef()
+
+  async function criarRelatorio() {
+
+    await api.post('/check', {
+      chamado: inputChamado.current.value,
+      abertura_chamado: inputAberturaChamado.current.value,
+      inicio_atendimento: inputIniAtendimento.current.value,
+      fim_atendimento: inputFimAtendimento.current.value,
+      km_inicio: inputKmInicio.current.value,
+      km_fim: inputKmFim.current.value,
+      contrato: radioContratoSim.current.checked.toString(),
+      garantia: radioGarantiaSim.current.checked.toString(),
+      tipo: radioTipoCorretiva.current.checked.toString(),
+      user: inputCliente.current.value
+    })
+
+  }
+
   return (
     <Box h="100vh">
       <Center
@@ -54,21 +86,21 @@ function App() {
             <HStack spacing="4">
               <Box w="100%">
                 <FormLabel htmlFor="nome">Abertura Chamado</FormLabel>
-                <Input placeholder='Select Date and Time' size='md' type='datetime-local' />
+                <Input placeholder='Select Date and Time' size='md' type='datetime-local' ref={inputAberturaChamado} />
               </Box>
               <Box w="100%">
                 <FormLabel htmlFor="chamado">Chamado</FormLabel>
-                <Input id="email" type="number" />
+                <Input id="chamado" type="number" ref={inputChamado} />
               </Box>
             </HStack>
             <HStack spacing="4">
               <Box w="100%">
                 <FormLabel htmlFor="nasc">Inicio de Atendimento</FormLabel>
-                <Input placeholder='Select Date and Time' size='md' type='datetime-local' />
+                <Input placeholder='Select Date and Time' size='md' type='datetime-local' ref={inputIniAtendimento} />
               </Box>
               <Box w="100%">
                 <FormLabel htmlFor="nasc">Fim de Atendimento</FormLabel>
-                <Input placeholder='Select Date and Time' size='md' type='datetime-local' />
+                <Input placeholder='Select Date and Time' size='md' type='datetime-local' ref={inputFimAtendimento} />
               </Box>
               {/* <Box w="100%">
                 <FormLabel htmlFor="nasc">Data de Atendimento</FormLabel>
@@ -80,17 +112,17 @@ function App() {
               </Box> */}
               <Box w="100%">
                 <FormLabel htmlFor="nasc">KM Inicio</FormLabel>
-                <Input id="cel" type="number" />
+                <Input id="kmInicio" type="number" ref={inputKmInicio} />
               </Box>
               <Box w="100%">
                 <FormLabel htmlFor="nasc">KM Fim</FormLabel>
-                <Input id="cel" type="number" />
+                <Input id="kmFim" type="number" ref={inputKmFim} />
               </Box>
             </HStack>
             <HStack spacing="4">
               <Box w="100%">
                 <FormLabel htmlFor="nome" >Cliente</FormLabel>
-                <Input id="nome" placeholder='Nome do cliente' />
+                <Input id="nome" placeholder='Nome do cliente' ref={inputCliente} />
               </Box>
               <Box w="100%">
                 <FormLabel htmlFor="cpf">CPF/CNPJ</FormLabel>
@@ -135,7 +167,7 @@ function App() {
                     <Radio colorScheme='red' value='1'>
                       Não
                     </Radio>
-                    <Radio colorScheme='green' value='2'>
+                    <Radio colorScheme='green' value='2' ref={radioContratoSim}>
                       Sim
                     </Radio>
                   </HStack>
@@ -150,7 +182,7 @@ function App() {
                     <Radio colorScheme='red' value='1'>
                       Não
                     </Radio>
-                    <Radio colorScheme='green' value='2'>
+                    <Radio colorScheme='green' value='2' ref={radioGarantiaSim}>
                       Sim
                     </Radio>
                   </HStack>
@@ -164,7 +196,7 @@ function App() {
                     <Radio colorScheme='blue' value='1'>
                       Preventiva
                     </Radio>
-                    <Radio colorScheme='green' value='2'>
+                    <Radio colorScheme='green' value='2' ref={radioTipoCorretiva}>
                       Corretiva
                     </Radio>
                   </HStack>
@@ -202,7 +234,7 @@ function App() {
             <HStack spacing="4" >
               <Box w="100%">
                 <div width="100%">
-                  <Desenho2 />
+                  <Desenho2 onClick={criarRelatorio} />
                 </div>
               </Box>
             </HStack>

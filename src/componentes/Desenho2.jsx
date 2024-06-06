@@ -3,7 +3,7 @@ import './App.css';
 import { useEffect, useState } from "react";
 import { FormLabel } from "@chakra-ui/react";
 
-const Desenho2 = () => {
+const Desenho2 = (props) => {
 
     const [limpar, setLimpar] = useState(0)
 
@@ -75,7 +75,7 @@ const Desenho2 = () => {
                 {/* <button onClick={'handleClick'}    >Limpar</button> */}
             </div>
             <div id="gravar">
-                <button onClick={() => setLimpar((limpar) => limpar + 1)}    >Gravar</button>
+                <button onClick={props.onClick}    >Gravar</button>
                 {/* <button onClick={'handleClick'}    >Limpar</button> */}
             </div>
 
