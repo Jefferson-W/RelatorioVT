@@ -70,3 +70,16 @@
   transition: 0.5s;
   background-color: #3182ce;
 }
+
+#paginas{
+  display: flex;
+  position: absolute;
+  right: 10px;
+  font-family: "Abel", sans-serif;
+  font-size: 25px;
+  padding: 15px;
+}
+
+#relatorios{
+  margin-left: 15px;
+}
