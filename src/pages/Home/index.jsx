@@ -13,11 +13,18 @@ import {
 } from "@chakra-ui/react";
 
 import Desenho2 from "../../componentes/Desenho2";
-import { useRef } from "react";
+import SelectCliente from "../../componentes/SelectClientes/SelectClientes";
+import { useRef, useState } from "react";
 import api from '../../services/api'
-
+import formatDate from "../../services/utils";
 
 function App() {
+
+  const [data, setData] = useState('')
+
+  function criarData() {
+    setData(formatDate)
+  }
 
   const inputChamado = useRef()
   const inputCliente = useRef()
@@ -112,7 +119,7 @@ function App() {
               </Box>
               <Box w="100%">
                 <FormLabel htmlFor="chamado">Chamado</FormLabel>
-                <Input id="chamado" type="number" ref={inputChamado} />
+                <Input id="chamado" type="number" onClick={criarData} value={data} ref={inputChamado} />
               </Box>
             </HStack>
             <HStack spacing="4">
@@ -124,14 +131,6 @@ function App() {
                 <FormLabel htmlFor="nasc">Fim de Atendimento</FormLabel>
                 <Input placeholder='Select Date and Time' size='md' type='datetime-local' ref={inputFimAtendimento} />
               </Box>
-              {/* <Box w="100%">
-                  <FormLabel htmlFor="nasc">Data de Atendimento</FormLabel>
-                  <Input id="nasc" type="date" />
-                </Box>
-                <Box w="100%">
-                  <FormLabel htmlFor="nasc">Horário</FormLabel>
-                  <Input id="nasc" type="date" />
-                </Box> */}
               <Box w="100%">
                 <FormLabel htmlFor="nasc">KM Inicio</FormLabel>
                 <Input id="kmInicio" type="number" ref={inputKmInicio} />
@@ -141,50 +140,11 @@ function App() {
                 <Input id="kmFim" type="number" ref={inputKmFim} />
               </Box>
             </HStack>
-            <HStack spacing="4">
-              <Box w="100%">
-                <FormLabel htmlFor="nome" >Cliente</FormLabel>
-                <Input id="nome" placeholder='Nome do cliente' ref={inputCliente} />
-              </Box>
-              <Box w="100%">
-                <FormLabel htmlFor="cpf">CPF/CNPJ</FormLabel>
-                <Input id="cpf" type="cpf" placeholder='CPF/CNPJ do Cliente' />
-              </Box>
-              {/* <Box w="100%">
-                  <FormLabel htmlFor="cel">Celular</FormLabel>
-                  <Input id="cel" type="number" />
-                </Box> */}
-            </HStack>
-            <HStack spacing="4">
-            </HStack>
-            <HStack spacing="4">
-
-              <Box w="200%">
-                <FormLabel htmlFor="endereco">Endereço</FormLabel>
-                <Input id="endereco" />
-              </Box>
-              <Box w="50%">
-                <FormLabel htmlFor="Tefone">Número</FormLabel>
-                <Input id="numero" type="number" />
-              </Box>
-              <Box w="100%">
-                <FormLabel htmlFor="bairro">Bairro</FormLabel>
-                <Input id="bairro" />
-              </Box>
-              <Box w="100%">
-                <FormLabel htmlFor="cidade">Cidade</FormLabel>
-                <Input id="cidade" />
-              </Box>
-              <Box w="50%">
-                <FormLabel htmlFor="estado">Estado</FormLabel>
-                <Input id="estado" />
-              </Box>
-            </HStack>
+            <SelectCliente refe={inputCliente} />
             <HStack spacing="4">
               <Box w="100%">
                 <RadioGroup defaultValue='2'>
                   <FormLabel>Contrato?</FormLabel>
-
                   <HStack spacing={5} direction='row'>
                     <Radio colorScheme='red' value='1'>
                       Não
@@ -195,11 +155,9 @@ function App() {
                   </HStack>
                 </RadioGroup>
               </Box>
-
               <Box w="100%">
                 <RadioGroup defaultValue='2'>
                   <FormLabel>Garantia?</FormLabel>
-
                   <HStack spacing={5} direction='row'>
                     <Radio colorScheme='red' value='1'>
                       Não
@@ -213,7 +171,6 @@ function App() {
               <Box w="100%">
                 <RadioGroup defaultValue='2'>
                   <FormLabel>Tipo</FormLabel>
-
                   <HStack spacing={5} direction='row'>
                     <Radio colorScheme='blue' value='1'>
                       Preventiva
@@ -225,7 +182,6 @@ function App() {
                 </RadioGroup>
               </Box>
             </HStack>
-
             <HStack spacing="4">
               <FormLabel>Observações</FormLabel>
               <Box width="100%">
@@ -238,33 +194,29 @@ function App() {
                 <Input placeholder='Detalhes do Cliente' size='md' />
               </Box>
             </HStack>
-
             <HStack spacing="4">
               <Box width="100%">
                 <FormLabel>Relatório Técnico</FormLabel>
                 <Textarea placeholder='' />
               </Box>
             </HStack>
-
             <HStack spacing="4">
               <Box width="100%">
                 <FormLabel>Considerações Gerais / Material Utilizado</FormLabel>
                 <Textarea placeholder='' />
               </Box>
             </HStack>
-
             <HStack spacing="4" >
               <Box w="100%">
                 <div width="100%">
                   <Desenho2 onClick={criarRelatorio} />
-                </div>               
+                </div>
               </Box>
             </HStack>
           </FormControl>
         </Center>
       </Flex>
     </Box >
-
   );
 }
 
