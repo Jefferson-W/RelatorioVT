@@ -1,12 +1,11 @@
 import React from 'react';
-import './App.css';
 import { useEffect, useState } from "react";
 import { FormLabel } from "@chakra-ui/react";
+import './App.css';
 
 const Desenho2 = (props) => {
 
     const [limpar, setLimpar] = useState(0)
-
 
     useEffect(() => {
 
@@ -18,10 +17,7 @@ const Desenho2 = (props) => {
         let isDrawing = false;
         let x = 0;
         let y = 0;
-
-        // event.offsetX, event.offsetY gives the (x,y) offset from the edge of the canvas.
-
-        // Add the event listeners for mousedown, mousemove, and mouseup
+        
         myPics.addEventListener("mousedown", (e) => {
             x = e.offsetX;
             y = e.offsetY;
@@ -59,8 +55,6 @@ const Desenho2 = (props) => {
         }
         if (limpar > 0) {
             limparDados()
-
-            console.log(limpar)
         }
     }, [limpar]);
 
@@ -72,11 +66,9 @@ const Desenho2 = (props) => {
             </canvas>
             <div id="limpar">
                 <button onClick={() => setLimpar((limpar) => limpar + 1)}    >Limpar</button>
-                {/* <button onClick={'handleClick'}    >Limpar</button> */}
             </div>
             <div id="gravar">
                 <button onClick={props.onClick}    >Gravar</button>
-                {/* <button onClick={'handleClick'}    >Limpar</button> */}
             </div>
 
         </div>

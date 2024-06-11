@@ -95,6 +95,7 @@ function App() {
         <Center
           w="100%"
           maxW={1280}
+          // maxW="calc(90%)"
           bg="white"
           top={70}
           position="absolute"
