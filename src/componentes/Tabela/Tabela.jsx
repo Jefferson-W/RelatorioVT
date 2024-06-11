@@ -31,10 +31,10 @@ function TabelaComAPI() {
 
         try {
             const asyncFn = async () => {
-                const url = 'https://projetobackend-aas8.onrender.com/allChecks'
+                const url = 'https://projetobackend-aas8.onrender.com/allUsersChecks'
                 const { data } = await axios.get(url, options)
 
-                setDados(data.checks)
+                setDados(data.users)
             };
 
             asyncFn();
@@ -48,8 +48,9 @@ function TabelaComAPI() {
         const filtrados = dados.filter(item => {
             return (
                 item.id.toLowerCase().includes(filtro.toLowerCase()) ||
+                item.user?.name.toLowerCase().includes(filtro.toLowerCase()) ||
                 item.chamado.toString().includes(filtro.toLowerCase()) ||
-                item.contrato.toLowerCase().includes(filtro.toLowerCase())
+                item.contrato.toLowerCase().includes(filtro.toLowerCase())                
             );
         });
         setDadosFiltrados(filtrados);
@@ -116,7 +117,7 @@ function TabelaComAPI() {
                                         {dadosFiltrados.map((item, index) => (
                                             <Tr key={index}>
                                                 <Td>{item.id}</Td>
-                                                <Td>{item.user_id}</Td>
+                                                <Td>{item.user?.name}</Td>
                                                 <Td>{item.chamado}</Td>
                                                 <Td>{item.abertura_chamado}</Td>
                                                 <Td>{item.contrato}</Td>
