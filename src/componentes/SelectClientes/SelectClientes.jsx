@@ -77,24 +77,24 @@ function SelectCliente(props) {
                     <Input id="cpf" type="cpf" placeholder={cpf} value={cpf} readOnly/>
                 </Box>
             </HStack>
-            <HStack spacing="4">
-                <Box w="200%">
+            <HStack id="hstackEndereco" spacing="4">
+                <Box id="boxEndereco1" w="200%">
                     <FormLabel htmlFor="endereco">Endereço</FormLabel>
                     <Input id="endereco" placeholder={endereco} value={endereco} readOnly />
                 </Box>
-                <Box w="50%">
+                <Box id="boxEndereco1" w="50%">
                     <FormLabel htmlFor="Tefone">Número</FormLabel>
                     <Input id="numero" type="number" placeholder={numero} value={numero} readOnly />
                 </Box>
-                <Box w="100%">
+                <Box id="boxEndereco2" w="100%">
                     <FormLabel htmlFor="bairro">Bairro</FormLabel>
                     <Input id="bairro" placeholder={bairro} value={bairro} readOnly />
                 </Box>
-                <Box w="100%">
+                <Box id="boxEndereco2" w="100%">
                     <FormLabel htmlFor="cidade">Cidade</FormLabel>
                     <Input id="cidade" placeholder={cidade} value={cidade} readOnly />
                 </Box>
-                <Box w="50%">
+                <Box id="boxEndereco2" w="50%">
                     <FormLabel htmlFor="estado">Estado</FormLabel>
                     <Input id="estado" placeholder={estado} value={estado} readOnly />
                 </Box>

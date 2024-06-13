@@ -21,7 +21,7 @@ function Navbar() {
             pb="8"
         >
             <img src={Logo} />
-            <div style={{ fontFamily: 'Abel' }}>
+            <div id="relatorio"style={{ fontFamily: 'Abel' }}>
                 Relatório de visita técnica
             </div>
             {/* <div id="paginas">

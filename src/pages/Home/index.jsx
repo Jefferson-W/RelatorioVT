@@ -112,40 +112,40 @@ function App() {
           paddingBottom={20}
         >
           <FormControl display="flex" flexDir="column" gap="4">
-            <HStack spacing="4">
-              <Box w="100%">
+            <HStack id="hstack" spacing="4">
+              <Box id="box'" w="100%">
                 <FormLabel htmlFor="nome">Abertura Chamado</FormLabel>
                 <Input placeholder='Select Date and Time' size='md' type='datetime-local' ref={inputAberturaChamado} />
               </Box>
-              <Box w="100%">
-                <FormLabel htmlFor="chamado">Chamado</FormLabel>
+              <Box id="box" w="100%">
+                <FormLabel id="chamadoForm" htmlFor="chamado">Chamado</FormLabel>
                 <Input id="chamado" type="number" onClick={criarData} value={data} ref={inputChamado} />
               </Box>
             </HStack>
-            <HStack spacing="4">
-              <Box w="100%">
+            <HStack id="hstack" spacing="4">
+              <Box id="box" w="100%">
                 <FormLabel htmlFor="nasc">Inicio de Atendimento</FormLabel>
                 <Input placeholder='Select Date and Time' size='md' type='datetime-local' ref={inputIniAtendimento} />
               </Box>
-              <Box w="100%">
+              <Box id="box" w="100%">
                 <FormLabel htmlFor="nasc">Fim de Atendimento</FormLabel>
                 <Input placeholder='Select Date and Time' size='md' type='datetime-local' ref={inputFimAtendimento} />
               </Box>
-              <Box w="100%">
+              <Box id="box" w="100%">
                 <FormLabel htmlFor="nasc">KM Inicio</FormLabel>
                 <Input id="kmInicio" type="number" ref={inputKmInicio} />
               </Box>
-              <Box w="100%">
+              <Box id="box" w="100%">
                 <FormLabel htmlFor="nasc">KM Fim</FormLabel>
                 <Input id="kmFim" type="number" ref={inputKmFim} />
               </Box>
             </HStack>
             <SelectCliente refe={inputCliente} />
-            <HStack spacing="4">
-              <Box w="100%">
+            <HStack id="hstack" spacing="4">
+              <Box id="box" w="100%">
                 <RadioGroup defaultValue='2'>
                   <FormLabel>Contrato?</FormLabel>
-                  <HStack spacing={5} direction='row'>
+                  <HStack id="hstack" spacing={5} direction='row'>
                     <Radio colorScheme='red' value='1'>
                       Não
                     </Radio>
@@ -155,10 +155,10 @@ function App() {
                   </HStack>
                 </RadioGroup>
               </Box>
-              <Box w="100%">
+              <Box id="box" w="100%">
                 <RadioGroup defaultValue='2'>
                   <FormLabel>Garantia?</FormLabel>
-                  <HStack spacing={5} direction='row'>
+                  <HStack id="hstack" spacing={5} direction='row'>
                     <Radio colorScheme='red' value='1'>
                       Não
                     </Radio>
@@ -168,10 +168,10 @@ function App() {
                   </HStack>
                 </RadioGroup>
               </Box>
-              <Box w="100%">
+              <Box id="box" w="100%">
                 <RadioGroup defaultValue='2'>
                   <FormLabel>Tipo</FormLabel>
-                  <HStack spacing={5} direction='row'>
+                  <HStack id="hstack" spacing={5} direction='row'>
                     <Radio colorScheme='blue' value='1'>
                       Preventiva
                     </Radio>
@@ -182,32 +182,32 @@ function App() {
                 </RadioGroup>
               </Box>
             </HStack>
-            <HStack spacing="4">
+            <HStack id="hstack" spacing="4">
               <FormLabel>Observações</FormLabel>
-              <Box width="100%">
+              <Box id="box" width="100%">
                 <Input placeholder='Observações' size='md' />
               </Box>
             </HStack>
-            <HStack spacing="4">
+            <HStack id="hstack" spacing="4">
               <FormLabel>Detalhe feito pelo Cliente</FormLabel>
-              <Box width="100%">
+              <Box id="box" width="100%">
                 <Input placeholder='Detalhes do Cliente' size='md' />
               </Box>
             </HStack>
-            <HStack spacing="4">
-              <Box width="100%">
+            <HStack id="hstack" spacing="4">
+              <Box id="box" width="100%">
                 <FormLabel>Relatório Técnico</FormLabel>
                 <Textarea placeholder='' />
               </Box>
             </HStack>
-            <HStack spacing="4">
-              <Box width="100%">
+            <HStack id="hstack" spacing="4">
+              <Box id="box" width="100%">
                 <FormLabel>Considerações Gerais / Material Utilizado</FormLabel>
                 <Textarea placeholder='' />
               </Box>
             </HStack>
-            <HStack spacing="4" >
-              <Box w="100%">
+            <HStack id="hstack" spacing="4" >
+              <Box id="box" w="100%">
                 <div width="100%">
                   <Desenho2 onClick={criarRelatorio} />
                 </div>

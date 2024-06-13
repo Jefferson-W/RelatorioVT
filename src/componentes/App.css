@@ -71,7 +71,7 @@
   background-color: #3182ce;
 }
 
-#paginas{
+#paginas {
   display: flex;
   position: absolute;
   right: 10px;
@@ -80,10 +80,84 @@
   padding: 15px;
 }
 
-#relatorios{
+#relatorios {
   margin-left: 15px;
 }
 
-#filtro{
+#filtro {
   margin-left: 1500px;
+}
+
+
+@media (max-width: 700px) {
+  /* #header {
+    color: rgb(44, 122, 41);
+    font-family: "Quicksand", sans-serif;
+    font-weight: 350;
+  } */
+
+  #header img {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+
+  #relatorio {
+    font-size: 0px;
+  }
+
+  #paginas {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  #hstack {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  #hstackEndereco {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #boxEndereco1 {
+    margin-top: 5px;
+    margin-left: 0px;
+    flex: 2 2 50%;
+  }
+  
+  #boxEndereco1 input{
+   margin-left: 10px;
+  }
+  #boxEndereco2 {
+    margin-top: 5px;
+    margin-left: 0px;
+    flex: 2 2 33%;
+  }
+
+  #box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+
+  #chamadoForm {
+    margin-top: 10px;
+  }
+
+  #tela{
+    max-width: 350px;
+    height: 100px;
+  }
+  
+  #limpar{
+    margin-top: 10px;
+  }
+  
+  #gravar{
+    margin-top: 10px;
+  }
 }
