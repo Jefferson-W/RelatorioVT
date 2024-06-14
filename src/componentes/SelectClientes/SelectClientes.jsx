@@ -74,13 +74,15 @@ function SelectCliente(props) {
                 </Box>
                 <Box w="100%">
                     <FormLabel htmlFor="cpf">CPF/CNPJ</FormLabel>
-                    <Input id="cpf" type="cpf" placeholder={cpf} value={cpf} readOnly/>
+                    <Input id="cpf" type="cpf" placeholder={cpf} value={cpf} readOnly />
                 </Box>
             </HStack>
             <HStack id="hstackEndereco" spacing="4">
                 <Box id="boxEndereco1" w="200%">
                     <FormLabel htmlFor="endereco">Endereço</FormLabel>
-                    <Input id="endereco" placeholder={endereco} value={endereco} readOnly />
+                    <div>
+                        <Input id="endereco" placeholder={endereco} value={endereco} readOnly />
+                    </div>
                 </Box>
                 <Box id="boxEndereco1" w="50%">
                     <FormLabel htmlFor="Tefone">Número</FormLabel>
@@ -88,7 +90,9 @@ function SelectCliente(props) {
                 </Box>
                 <Box id="boxEndereco2" w="100%">
                     <FormLabel htmlFor="bairro">Bairro</FormLabel>
-                    <Input id="bairro" placeholder={bairro} value={bairro} readOnly />
+                    <div id="bairro">
+                        <Input  placeholder={bairro} value={bairro} readOnly />
+                    </div>
                 </Box>
                 <Box id="boxEndereco2" w="100%">
                     <FormLabel htmlFor="cidade">Cidade</FormLabel>
@@ -96,7 +100,9 @@ function SelectCliente(props) {
                 </Box>
                 <Box id="boxEndereco2" w="50%">
                     <FormLabel htmlFor="estado">Estado</FormLabel>
-                    <Input id="estado" placeholder={estado} value={estado} readOnly />
+                    <div id="estado">
+                        <Input  placeholder={estado} value={estado} readOnly />
+                    </div>
                 </Box>
             </HStack>
         </>

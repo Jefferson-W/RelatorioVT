@@ -90,12 +90,6 @@
 
 
 @media (max-width: 700px) {
-  /* #header {
-    color: rgb(44, 122, 41);
-    font-family: "Quicksand", sans-serif;
-    font-weight: 350;
-  } */
-
   #header img {
     position: absolute;
     left: 10px;
@@ -109,6 +103,7 @@
   #paginas {
     font-size: 15px;
     font-weight: bold;
+    padding: 10px;
   }
 
   #hstack {
@@ -128,13 +123,23 @@
     flex: 2 2 50%;
   }
   
-  #boxEndereco1 input{
-   margin-left: 10px;
+  #boxEndereco1 div{
+   margin-left: 0px;
+   margin-right: 10px;
   }
+
   #boxEndereco2 {
     margin-top: 5px;
     margin-left: 0px;
-    flex: 2 2 33%;
+    flex: 2 2 33%;    
+  }
+
+  #boxEndereco2 #bairro{
+    margin-right: 10px;
+  }
+  
+  #boxEndereco2 #estado{
+    margin-left: 10px;
   }
 
   #box {
