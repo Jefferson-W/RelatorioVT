@@ -1,11 +1,12 @@
-// import AppRoutes from "./routes"
-import { Center } from "@chakra-ui/react";
-import Logo from "../../assets/duallytecLogo.png"
 import {
     Breadcrumb,
     BreadcrumbItem,
     BreadcrumbLink,
+    Center
 } from '@chakra-ui/react'
+import Logo from "../../assets/duallytecLogo.png"
+import { Link } from 'react-router-dom';
+
 
 function Navbar() {
 
@@ -21,30 +22,23 @@ function Navbar() {
             pb="8"
         >
             <img src={Logo} />
-            <div id="relatorio"style={{ fontFamily: 'Abel' }}>
+            <div id="relatorio" style={{ fontFamily: 'Abel' }}>
                 Relatório de visita técnica
-            </div>
-            {/* <div id="paginas">
-                <div id="home">
-                    <span>Home</span>
-                </div>
-                <div id="relatorios">
-                    <span>Relatorios</span>
-                </div>
-            </div> */}
+            </div>           
             <div id="paginas">
                 <Breadcrumb>
                     <BreadcrumbItem >
-                        <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+                        <Link to="/">
+                            <BreadcrumbLink >Home</BreadcrumbLink>
+                        </Link>
                     </BreadcrumbItem>
-
                     <BreadcrumbItem>
-                        <BreadcrumbLink href='relatorios'>Relatórios</BreadcrumbLink>
+                        <Link to="relatorios">
+                            <BreadcrumbLink >Relatórios</BreadcrumbLink>
+                        </Link>
                     </BreadcrumbItem>
                 </Breadcrumb>
             </div>
-
-
         </Center>
     )
 }
