@@ -63,6 +63,9 @@ function App() {
           duration: 2000,
           isClosable: true,
         })
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000)
       }
     } catch (error) {
       let erro = error.response.data.message

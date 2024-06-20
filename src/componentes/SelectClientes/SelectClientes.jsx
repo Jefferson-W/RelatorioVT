@@ -13,7 +13,6 @@ const optionsGet = {
     timeout: 10000,
 
 }
-// const SelectInput = () => {
 function SelectCliente(props) {
 
     const [options, setOptions] = useState([])
@@ -39,6 +38,14 @@ function SelectCliente(props) {
         fetchOptions()
     }, [])
 
+    const limparCamposCliente = () => {
+        setCpf('')
+        setEndereco('')
+        setNumero('')
+        setBairro('')
+        setCidade('')
+        setEstado('')
+    }
     const handleSelectChange = (event) => {
         const selectedValue = event.target.value
         setSelectedOption(selectedValue)
@@ -52,12 +59,7 @@ function SelectCliente(props) {
             setCidade(selectedOption.cidade)
             setEstado(selectedOption.estado)
         } else {
-            setCpf('')
-            setEndereco('')
-            setNumero('')
-            setBairro('')
-            setCidade('')
-            setEstado('')
+            limparCamposCliente()
         }
     }
 
@@ -91,7 +93,7 @@ function SelectCliente(props) {
                 <Box id="boxEndereco2" w="100%">
                     <FormLabel htmlFor="bairro">Bairro</FormLabel>
                     <div id="bairro">
-                        <Input  placeholder={bairro} value={bairro} readOnly />
+                        <Input placeholder={bairro} value={bairro} readOnly />
                     </div>
                 </Box>
                 <Box id="boxEndereco2" w="100%">
@@ -101,7 +103,7 @@ function SelectCliente(props) {
                 <Box id="boxEndereco2" w="50%">
                     <FormLabel htmlFor="estado">Estado</FormLabel>
                     <div id="estado">
-                        <Input  placeholder={estado} value={estado} readOnly />
+                        <Input placeholder={estado} value={estado} readOnly />
                     </div>
                 </Box>
             </HStack>
