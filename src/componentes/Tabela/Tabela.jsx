@@ -48,7 +48,7 @@ function TabelaComAPI() {
         const filtrados = dados.filter(item => {
             return (
                 item.id.toLowerCase().includes(filtro.toLowerCase()) ||
-                item.user?.name.toLowerCase().includes(filtro.toLowerCase()) ||
+                item.usuario?.name.toLowerCase().includes(filtro.toLowerCase()) ||
                 item.chamado.toString().includes(filtro.toLowerCase()) ||
                 item.contrato.toLowerCase().includes(filtro.toLowerCase())                
             );
@@ -117,7 +117,7 @@ function TabelaComAPI() {
                                         {dadosFiltrados.map((item, index) => (
                                             <Tr key={index}>
                                                 <Td>{item.id}</Td>
-                                                <Td>{item.user?.name}</Td>
+                                                <Td>{item.usuario?.name}</Td>
                                                 <Td>{item.chamado}</Td>
                                                 <Td>{item.abertura_chamado}</Td>
                                                 <Td>{item.contrato}</Td>
